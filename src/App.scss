@@ -154,6 +154,7 @@ $Gray_7: #F7F8FC;
 .menu{
   position: absolute;
   width: 100%;
+  top: 0;
   &__section__navbar{
     text-align: right;
 
@@ -180,6 +181,93 @@ $Gray_7: #F7F8FC;
 
 
 
+
+.dropdown-toggle::after{
+  border-top: 0.3em solid red
+}
+
+.plan{
+  margin: 0;
+  padding-top: 56px !important;
+  border-top: 1px solid #E4E8F7;
+
+  &__col{
+    text-align: center;
+    padding: 0 65px;
+
+    &__retroceder{
+      text-align: start !important;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+
+      span{
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.6px;
+        margin-left: 16px;
+      }
+    }
+
+    &__perfil{
+      text-align: start !important;
+      margin-top: 28px;
+      
+      h1{
+        font-size: 40px;
+        line-height: 48px;
+        letter-spacing: -0.6px;
+        color: #494F66;
+
+        span{
+          color: $Red_1_Rimac;
+          font-size: 40px;
+          line-height: 48px;
+          letter-spacing: -0.6px;
+        }
+      }
+
+      span{
+        font-size: 16px;
+        line-height: 28px;
+        color: #676F8F;
+      }
+    }
+
+    &__contenidocarro{
+      display: flex;
+      margin-top: 44px;
+      border: 3px solid #F0F2FA;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      border-radius: 12px;
+
+      &__text{
+        text-align: start !important;
+
+        p{
+          font-size: 12px;
+          line-height: 20px;
+          letter-spacing: 0.2px;
+          color: #A3ABCC;
+          margin-bottom: 2px;
+        }
+
+        h3{
+          font-size: 20px;
+          line-height: 28px;
+          color: #494F66;
+          width: 192px;
+        }
+      }
+    }
+  }
+}
+
+
+
+/// responsive
 
 @media (max-width: 550px) {
   .home{
@@ -291,9 +379,4 @@ $Gray_7: #F7F8FC;
       }
     }
   } 
-}
-
-
-.dropdown-toggle::after{
-  border-top: 0.3em solid red
 }

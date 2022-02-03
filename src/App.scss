@@ -1,0 +1,299 @@
+@import  "~bootstrap/scss/bootstrap";
+
+$Red_1_Rimac: #EF3340;
+$Gray_3: #A3ABCC;
+$Gray_2_Paragraph: #676F8F;
+$Green_2: #43B748;
+$Acian_2_Hover: #6F7DFF;
+$Gray_7: #F7F8FC;
+
+
+
+.home{
+  height: 100vh;
+  margin: 0;
+
+  &__section-animate{
+    background-image: url('./images/fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 calc(100% - 96%);
+    text-align: center;
+    padding-bottom: 13px;
+
+    &__contenido{
+      margin-top: 96px;
+        img.responsive{
+          display: none;
+        }
+      &__text{
+        text-align: start !important;
+        margin-top: 21px;
+        padding-left: calc(100% - 80%);
+
+        &__subtitle{
+          font-size: 13px;
+          line-height: 16px;
+          font-weight: 700;
+          letter-spacing: 0.8px;
+        }
+
+        &__title{
+          font-size: 42px;
+          line-height: 48px;
+          font-weight: 400;
+          letter-spacing: -0.2px;
+          width: 320px;
+          span{
+            color: $Red_1_Rimac
+          }
+        }
+
+        &__paragraph{
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 400;
+          width: 288px;
+        }
+      }
+    }
+
+    &__footer{
+      text-align: start !important;
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 300;
+      letter-spacing: 0.2px;
+      margin-top: 80px;
+      color: $Gray_3;
+    }
+  }
+  
+  &__section-form{
+
+    &__card{
+      margin-top: 122px;
+      &__content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .card{
+          border: none !important;
+
+          .card-title{
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 36px;
+            letter-spacing: -0.2px;
+            margin-bottom: 24px;
+          }
+          .card-body{
+            padding: unset !important;
+            font-size: 16px;
+
+            .form-control{
+              font-size: 16px;
+              &.form-2{
+                margin-bottom: 16px;
+              }
+              &:focus{
+                box-shadow: none;
+              }   
+
+            }
+            .form-check{
+              margin-top: 24px;
+              
+              .form-check-input{
+                &:checked{
+                  background-color: $Green_2;
+                  border-color: $Green_2;
+                }
+
+                &:focus{
+                  box-shadow: none;
+                }
+              }
+
+              .form-check-label{
+                font-weight: 300;
+                font-size: 12px;
+                line-height: 20px;
+                letter-spacing: 0.2px;
+                color: $Gray_2_Paragraph;
+                span{
+                  text-decoration: underline;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+
+        Button.b-form{
+          background: $Red_1_Rimac;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 16px;text-align: center;
+          letter-spacing: 0.8px;
+          text-transform: uppercase;
+          height: 56px;
+          width: 192px;
+          margin-top: 40px;
+
+          &:focus{
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu{
+  position: absolute;
+  width: 100%;
+  &__section__navbar{
+    text-align: right;
+
+    span{
+      font-size: 12px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      color: $Gray_2_Paragraph;
+      margin-right: 23px;
+
+      &.number{
+        font-size: 14px;
+        line-height: 24px;
+        color: $Acian_2_Hover;
+        margin-left: 5px;
+      }
+
+      &.responsive-number{
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+
+@media (max-width: 550px) {
+  .home{
+    &__section-animate{
+      background: $Gray_7;
+      text-align: center;
+      padding-bottom: 13px;
+      padding: 0 !important;
+      &__contenido{
+        display: flex !important;
+
+        img{
+          display: none;
+          &.responsive{
+            display: flex !important;
+            width: 125px;
+          }
+        }
+
+        &__text{
+          padding-left: 0 !important;
+          position: relative;
+          width: 100%;
+          padding-bottom: 56px !important;
+
+          &__subtitle{
+            font-size: 10px;
+            line-height: 16px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            margin-left: 50px;
+            color: #494F66;
+          }
+  
+          &__title{
+            font-size: 28px;
+            line-height: 36px;
+            font-weight: 400;
+            letter-spacing: -0.6px;
+            width: 200px;
+            margin-left: 50px;
+            color: #494F66;
+            span{
+              color: $Red_1_Rimac
+            }
+          }
+  
+          &__paragraph{
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 400;
+            width: 183px;
+            margin-left: 50px;
+            letter-spacing: 0.8px;
+            color: $Gray_2_Paragraph;
+          }
+
+          .responsive{
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+        }
+      }
+
+      &__footer{
+        display: none;
+      }
+    }
+
+    &__section-form{
+      &__card{
+        margin-top: 40px;
+        &__content{
+  
+          .card{
+            width: 22rem !important;
+          }
+
+          Button.b-form{
+            width: 100%;
+            margin-bottom: 54px;
+          }
+        }
+      }
+    }
+  }
+  .menu{
+    img{
+      margin-left: 32px;
+    }
+    &__section__navbar{
+      text-align: right;
+      margin-right: 32px;
+      span{
+        display: none;
+  
+        &.number{
+          display: none;
+        }
+
+        &.responsive-number{
+          display: initial !important;
+          font-size: 14px;
+          line-height: 24px;
+          margin-left: 5px;
+          color: $Acian_2_Hover;
+        }
+      }
+    }
+  } 
+}
+
+
+.dropdown-toggle::after{
+  border-top: 0.3em solid red
+}

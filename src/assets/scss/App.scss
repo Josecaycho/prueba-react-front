@@ -14,7 +14,7 @@ $Gray_7: #F7F8FC;
   margin: 0;
 
   &__section-animate{
-    background-image: url('./images/fondo.png');
+    background-image: url('../images/fondo.png');
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0 calc(100% - 96%);
@@ -298,7 +298,7 @@ $Gray_7: #F7F8FC;
             line-height: 16px;
             font-weight: 700;
             letter-spacing: 0.8px;
-            margin-left: 50px;
+            margin-left: 30px;
             color: #494F66;
           }
   
@@ -308,7 +308,7 @@ $Gray_7: #F7F8FC;
             font-weight: 400;
             letter-spacing: -0.6px;
             width: 200px;
-            margin-left: 50px;
+            margin-left: 30px;
             color: #494F66;
             span{
               color: $Red_1_Rimac
@@ -320,7 +320,7 @@ $Gray_7: #F7F8FC;
             line-height: 24px;
             font-weight: 400;
             width: 183px;
-            margin-left: 50px;
+            margin-left: 30px;
             letter-spacing: 0.8px;
             color: $Gray_2_Paragraph;
           }

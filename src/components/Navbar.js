@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import logo from "../images/logo.png";
-import telefono from "../images/telefono.svg";
+import logo from "../assets/images/logo.png";
+import telefono from "../assets/images/telefono.svg";
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 

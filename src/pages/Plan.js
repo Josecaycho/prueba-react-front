@@ -23,7 +23,7 @@ const Plan = (props) => {
   const [monto, setMonto] = useState("13,500");
   const montoMinimo = 12500
   const montoMaximo = 16500
-  const [coberturas, setCoberturas] = useState(JSON.parse(localStorage.getItem('coberturas')))
+  const [coberturas] = useState(JSON.parse(localStorage.getItem('coberturas')))
   const valorTabs = [
     {
       id: 1,

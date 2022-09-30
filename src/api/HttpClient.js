@@ -1,5 +1,4 @@
 import axios from 'axios';
-const { API_URL } = process.env;
 //Local
 
 const productsAxios = axios.create({

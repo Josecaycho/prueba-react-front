@@ -5,7 +5,7 @@ import Tabs from "react-bootstrap/Tabs";
 import ContentTab from "./ContentTab";
 
 const TabsInterface = ({ allTabs }) => {
-  const [stateTabs, setStateTabs] = useState(allTabs)
+  const [stateTabs] = useState(allTabs)
 
   return (
     <Tabs

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
-import Card from 'react-bootstrap/Card';
 import { useDispatch } from "react-redux"
 
 import {

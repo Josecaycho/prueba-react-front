@@ -180,8 +180,6 @@ $Gray_7: #F7F8FC;
 }
 
 
-
-
 .dropdown-toggle::after{
   border-top: 0.3em solid red
 }
@@ -229,6 +227,9 @@ $Gray_7: #F7F8FC;
             display: flex;
             justify-content: center;
             align-items: center;
+            &__responsive{
+              display: none;
+            }
           }
 
           &.active{
@@ -274,6 +275,10 @@ $Gray_7: #F7F8FC;
             font-size: 40px;
             line-height: 48px;
             letter-spacing: -0.6px;
+          }
+
+          &.responsive{
+            display: none;
           }
         }
   
@@ -600,5 +605,193 @@ $Gray_7: #F7F8FC;
         }
       }
     }
-  } 
+  }
+  
+  .plan{
+    &__col{
+      padding: 0 32px;
+      &__navigate{
+        background-color: #fff;
+        &__items{
+          display: flex;
+          width: 100%;
+          padding: 25px 35px 0px;
+          &__item{
+            &:first-child{
+              display: none;
+              &::before{
+                display: none;
+              }
+            }
+
+            &__number{
+              display: none;
+              &__responsive{
+                display: block;
+              }
+            }
+
+            &.active{
+              div{
+                background-color: transparent;
+                color: #676F8F;
+                font-weight: 700;
+                position: relative
+              }
+              span{
+                display: none;
+              }
+              ::before{
+                content: " ";
+                width: 176px;
+                height: 6px;
+                background-color: #6464FA;
+                position: absolute;
+                top: 10px;
+                left: 115%;
+                border-radius: 5px;
+              }
+            }
+          }
+        }
+      }
+
+      &__content{
+        &__retroceder{
+          display: none;
+        }
+    
+        &__perfil{
+          text-align: start !important;
+          margin-top: 28px;
+          
+          h1{
+            font-size: 40px;
+            line-height: 48px;
+            letter-spacing: -0.6px;
+            color: #494F66;
+            display: none;
+    
+            span{
+              color: $Red_1_Rimac;
+              font-size: 40px;
+              line-height: 48px;
+              letter-spacing: -0.6px;
+            }
+
+            &.responsive{
+              display: block;
+            }
+          }
+    
+          span{
+            font-size: 16px;
+            line-height: 28px;
+            color: #676F8F;
+          }
+        }
+    
+        &__contenidocarro{
+          display: flex;
+          margin-top: 44px;
+          border: 3px solid #F0F2FA;
+          justify-content: center;
+          align-items: center;
+          box-sizing: border-box;
+          border-radius: 12px;
+    
+          &__text{
+            text-align: start !important;
+    
+            p{
+              font-size: 12px;
+              line-height: 20px;
+              letter-spacing: 0.2px;
+              color: #A3ABCC;
+              margin-bottom: 2px;
+            }
+    
+            h3{
+              font-size: 20px;
+              line-height: 28px;
+              color: #494F66;
+              width: 192px;
+            }
+          }
+        }
+  
+        &__montos{
+          display: block;
+          &__number{
+            width: 100%;
+            margin-top: 20px;
+            gap: 100px;
+            &__remove{
+              
+            }
+            &__add{
+              
+            }
+            &__monto{
+              
+            }
+          }
+        }
+
+        &__coberturas{
+          
+          .nav-tabs{
+            .nav-item{
+              &:nth-last-child(1) .nav-link{
+                letter-spacing: 1.3px;
+              }
+              .nav-link{
+                font-size: 10px
+              }
+            }
+          }
+        }
+      }
+
+      &__monto{
+        margin-top: 0;
+        gap: 35px;
+        text-align: start;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 1px 4px rgba(163, 171, 204, 0.06), 0px 8px 30px rgba(20, 43, 127, 0.1);
+
+        &__firstSection{
+          display: grid;
+          gap: 0px;
+          font-weight: 400;
+          p{
+            margin-bottom: 0px;
+            font-size: 12px;
+
+            &:first-child{
+              display: none;
+            }
+          }
+          span{
+            font-size: 28px;
+          }
+        }
+        &__secondSection{
+          display: none;
+        }
+        &__button{
+          button{
+            height: 48px;
+            width: 224px;
+            border-radius: 8px;
+            background: #EF3340;
+            border: transparent;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
 }

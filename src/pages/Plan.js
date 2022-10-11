@@ -80,19 +80,19 @@ const Plan = (props) => {
       setMonto(formatNumber(Number(cantidad) - 100))
 
       if(Number(cantidad) <= 16000) {
-        for (let i = 0; i < coberturas[0].content.length; i++) {
-          if(coberturas[0].content[i].id === 12 && coberturas[0].content[i].state === false){
-            coberturas[0].content[i].state = true
-          }
+        let coberturas = user.coberturas
+
+        for (let i = 0; i < coberturas.length; i++) {
+          if(coberturas[i].id === 12){
+            if(coberturas[i].state === false){
+              let json = {
+                id: 12,
+              };
           
-          let json = {
-            content: coberturas[0].content,
-            id: 12
+              dispatch(dataUserCoberturas(json));
+            }
           }
-      
-          dispatch(dataUserCoberturas(json));
         }
-        console.log(coberturas)
         localStorage.setItem("coberturas", JSON.stringify(coberturas));
       }
     }
@@ -104,18 +104,20 @@ const Plan = (props) => {
     if(Number(cantidad) < montoMaximo){
       setMonto(formatNumber(Number(cantidad) +  100))
 
-      if(Number(cantidad) > 15999&& Number(cantidad) < 16001) {
-        for (let i = 0; i < coberturas[0].content.length; i++) {
-          if(coberturas[0].content[i].id === 12 && coberturas[0].content[i].state === true){
-            coberturas[0].content[i].state = false
+      if(Number(cantidad) > 15999 ) {
+        let coberturas = user.coberturas
+
+        for (let i = 0; i < coberturas.length; i++) {
+          if(coberturas[i].id === 12){
+            if(coberturas[i].state === true){
+              let json = {
+                id: 12,
+              };
+          
+              dispatch(dataUserCoberturas(json));
+            }
           }
         }
-        let json = {
-          content: coberturas[0].content,
-          id: 12
-        }
-    
-        dispatch(dataUserCoberturas(json));
       }
       localStorage.setItem("coberturas", JSON.stringify(coberturas));
     }
@@ -127,10 +129,10 @@ const Plan = (props) => {
 
   return (
     <section className="plan row">
-      <div className="col-3 plan__col plan__col__navigate">
+      <div className="col-12 col-lg-3 plan__col plan__col__navigate">
         <Navigate />
       </div>
-      <div className="col-5 plan__col plan__col__content">
+      <div className="col-12 col-lg-5 plan__col plan__col__content">
         <div className="plan__col__content__retroceder">
           <img src={retroceder} alt="" />
           <span>VOLVER</span>
@@ -138,6 +140,9 @@ const Plan = (props) => {
         <div className="plan__col__content__perfil">
           <h1>
             ¡Hola, <span>{user.userData.user.username}!</span>
+          </h1>
+          <h1 className="responsive">
+            Mira las coberturas
           </h1>
           <span>Conoce las coberturas para tu plan</span>
         </div>
@@ -166,7 +171,7 @@ const Plan = (props) => {
           <Tabs allTabs={valorTabs}/>
         </div>
       </div>
-      <div className="col-3 plan__col plan__col__monto">
+      <div className="col-12 col-lg-3 plan__col plan__col__monto">
         <div className="plan__col__monto__firstSection">
           <p>MONTO</p>
           <span>{`$ ${user.monto}`}</span>

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Accordion from "react-bootstrap/Accordion";
-import { useDispatch } from "react-redux"
+import { useDispatch , useSelector} from "react-redux"
 
 import {
   dataUserCoberturas
@@ -8,22 +8,13 @@ import {
 
 const ContentValueTab = ({ contentTab }) => {
   const dispatch = useDispatch()
-  const [stateTab, setStateTab] = useState(contentTab);
+  // const [stateTab, setStateTab] = useState(contentTab);
   const defaultTab = 0;
+  const coberturas = useSelector((state) => state.user);
 
   const changeValueCobertura = (value) => {
-    let valueArr = stateTab
-    for (let i = 0; i < valueArr.length; i++) {
-      if(valueArr[i].id === value.id){
-        valueArr[i].state = !value.state
-      }
-    }
-    
-    setStateTab(valueArr)
-
     let json = {
-      content: valueArr,
-      id: value.id
+      id: value
     }
 
     dispatch(dataUserCoberturas(json));
@@ -31,12 +22,12 @@ const ContentValueTab = ({ contentTab }) => {
 
   return (
     <Accordion defaultActiveKey={[defaultTab]} alwaysOpen>
-      {stateTab.map((item, i) => (
+      {coberturas.coberturas.map((item, i) => (
         <Accordion.Item key={i} eventKey={i}>
           <Accordion.Header>
             <div className="accordion-button__content">
               <p>{item.title}</p>
-              <div className="accordion-button__content__btn"  onClick={() => changeValueCobertura(item)}>
+              <div className="accordion-button__content__btn"  onClick={() => changeValueCobertura(item.id)}>
                 <div className="accordion-button__content__btn__icon"> { item.state ? '-' : '+' } </div>
                 <span> { item.state ? 'QUITAR' : 'AGREGAR' } </span>
               </div>
